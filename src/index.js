@@ -38,7 +38,13 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    // write your solution here
+    console.log(expr);
+    console.log('\n' + "---------" + "\n");
+    console.log(expr.slice(-10)); //откусываем кусок строки
+    //TODO добавить преобразование буквы
+    
+    
+    
 }
 
 module.exports = {
