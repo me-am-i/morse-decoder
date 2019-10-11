@@ -39,8 +39,8 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    console.log(expr);
-    console.log('\n' + "---------" + "\n");
+  //  console.log(expr);
+  //  console.log('\n' + "---------" + "\n");
 //    console.log(expr.slice(-10)); // откусываем кусок строки
     // TODO добавить преобразование буквы
 
@@ -65,7 +65,10 @@ function decode(expr) {
         
         let symbol = '';
 
-        for (let index = 0; index < 10; index = index + 2) {  // переводим двоичный код в строку
+        if (rawSymbol == "**********") {
+            MORSE_TABLE[symbol] = " ";
+        }
+        else {for (let index = 0; index < 10; index = index + 2) {  // переводим двоичный код в строку
             var element = rawSymbol[index] + rawSymbol[index+1];
                 switch (element) {
                     case "00":
@@ -80,7 +83,7 @@ function decode(expr) {
                         break;
                     }
                 }
-               
+            }      
                 
            //     console.log(rawSymbol + " ноли и единицы " + symbol + " точки и тире " );
     //        console.log();
